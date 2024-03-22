@@ -10,8 +10,8 @@ pipeline {
     stage('Run') {
       steps {
         script {
-          def scriptGroovy = load './hello.groovy'
-          echo scriptGroovy('World')
+          def scriptGroovy = load 'hello.groovy'
+          echo scriptGroovy.hello('World')
         }
       }
     }
