@@ -4,9 +4,11 @@ pipeline {
   stages {
     stage('Create File') {
       steps {
-        echo 'Creating file..'
-        def scriptGroovy = load 'fileCreate.groovy'
-        scriptGroovy.createHello('World')
+        script{
+          echo 'Creating file..'
+          def scriptGroovy = load 'fileCreate.groovy'
+          scriptGroovy.createHello('World')
+        }
       }
     }
     stage('Print Hello') {
