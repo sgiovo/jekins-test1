@@ -10,7 +10,7 @@ pipeline {
     stage('Run') {
       steps {
         script {
-          def scriptGroovy = load '${rootDir}@script/hello.groovy'
+          def scriptGroovy = load '@script/hello.groovy'
           echo scriptGroovy.hello('World')
         }
       }
