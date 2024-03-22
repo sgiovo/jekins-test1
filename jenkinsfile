@@ -2,16 +2,18 @@ pipeline {
   agent any
 
   stages {
-    stage('Test') {
+    stage('Create File') {
       steps {
-        echo 'Testing..'
+        echo 'Creating file..'
+        def scriptGroovy = load 'fileCreate.groovy'
+        scriptGroovy.createHello('World')
       }
     }
-    stage('Run') {
+    stage('Print Hello') {
       steps {
         script {
-          def scriptGroovy = load 'hello.groovy'
-          echo scriptGroovy.hello('World')
+          def scriptGroovy = load 'print.groovy'
+          scriptGroovy.print()
         }
       }
     }
