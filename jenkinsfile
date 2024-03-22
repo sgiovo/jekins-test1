@@ -11,7 +11,7 @@ pipeline {
       steps {
         script {
           def scriptGroovy = load './hello.groovy'
-          echo scriptGroovy.hello('World')
+          echo scriptGroovy('World')
         }
       }
     }
