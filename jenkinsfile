@@ -1,0 +1,19 @@
+pipeline {
+  agent any
+
+  stages {
+    stage('Test') {
+      steps {
+        echo 'Testing..'
+      }
+    }
+    stage('Run') {
+      steps {
+        script {
+          def scriptGroovy = load 'hello.groovy'
+          echo scriptGroovy.hello('World')
+        }
+      }
+    }
+  }
+}
